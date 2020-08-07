@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+
+<body>
+  <div class="container mt-4">
+    <h5>设置</h5>
+    <ul class="nav nav-pills mb-2">
+      <li><button type="button" id="file-locate" class="btn btn-primary">选择文件存储位置</button> </li>
+      <li><button type="button" id="qiniu-config" class="btn btn-default">七牛云同步</button> </li>
+    </ul>
+
+
+    <form id="settings-form">
+      <div class="form-group">
+        <div class="input-group mb-2">
+          <input type="text" id="saved-file-location" class="form-control" placeholder="当前存储地址" />
+          <div class="input-group-append">
+            <button class="btn btn-outline-primary" type="button" id="select-new-location">选择新的位置</button>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">保存</button>
+    </form>
+
+    <form id="qiniu-settings-form" class="form-horizontal" style="display: none;">
+      <div class="form-group mb-2 row d-flex align-items-center">
+        <label for="access-key" class="col-3 control-label">Access Key</label>
+        <div class="col-9">
+          <input name="accessKey" type="text" id="access-key" class="form-control" placeholder="Access Key" />
+        </div>
+      </div>
+      <div class="form-group mb-2 row d-flex align-items-center">
+        <label for="secret-key" class="col-3 control-label">Screte Key</label>
+        <div class="col-9">
+          <input name="secretKey" type="password" id="secret-key" class="form-control" placeholder="Screte Key" />
+        </div>
+      </div>
+
+      <div class="form-group mb-2 row d-flex align-items-center">
+        <label for="bucket" class="col-3 control-label">bucket</label>
+        <div class="col-9">
+          <input name="bucket" type="text" id="bucket" class="form-control" placeholder="请输入Bucket" />
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-3"></div>
+        <div class="col-9"><button type="submit" class="btn btn-primary">保存</button></div>
+      </div>
+    </form>
+
+  </div>
+  <script>
+    require('./settings.js');
+  </script>
+</body>
+
+</html>
